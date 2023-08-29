@@ -23,7 +23,7 @@ def test_compute(input, expected):
 
 
 # Using an accepted error for asserting the correctness
-@pytest.mark.parametrize("input, expected", testdata)   
+@pytest.mark.parametrize("input, expected", testdata)
 def test_compute_direct(input, expected):
 
     assert fibonacci.compute_direct(input) == pytest.approx(expected,
