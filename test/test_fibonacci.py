@@ -5,8 +5,8 @@ from fibonacci import fibonacci
 
 accepted_error = 1e6
 
+# format for testdata? (input, expected_result)
 testdata = [
-    #(input value, expected value),
     (0, 0),
     (2, 1),
     (5, 5),
@@ -15,13 +15,16 @@ testdata = [
     (15, 610),
 ]
 
+
 @pytest.mark.parametrize("input, expected", testdata)
 def test_compute(input, expected):
 
     assert fibonacci.compute(input) == expected
 
+
 # Using an accepted error for asserting the correctness
-@pytest.mark.parametrize("input, expected", testdata)
+@pytest.mark.parametrize("input, expected", testdata)   
 def test_compute_direct(input, expected):
 
-    assert fibonacci.compute_direct(input) == pytest.approx(expected, accepted_error)
+    assert fibonacci.compute_direct(input) == pytest.approx(expected,
+                                                            accepted_error)

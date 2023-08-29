@@ -21,22 +21,18 @@ def compute(n: int) -> int:
             xi = xj
             xj = xn
             xn = xi + xj
-
-
     return xn
 
 
-def compute_direct(n: int) -> int:
+def compute_direct(n: int) -> float:
     """
     Notes
     -----
     This is an exact formula for computing fibonacci numbers, but due to
-    representation limitations for irrational numbers it might return numbers 
+    representation limitations for irrational numbers it might return numbers
     with small numerical flutuations. We could avoid this behavior easily by
     rounding the result, i.e. np.round(result, 0)
     """
-
-
     golden_number = (1 + np.sqrt(5)) / 2
 
     return (golden_number ** n - (1 - golden_number) ** n) / np.sqrt(5)
